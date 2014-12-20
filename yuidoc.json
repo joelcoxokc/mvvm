@@ -1,0 +1,10 @@
+{
+    "name": "mvvm",
+    "description": "mvvm: Model View ViewModel Scaffolding tool",
+    "version": "0.1.0",
+    "url": "https://github.com/joelcoxokc/mvvm",
+    "options": {
+        "outdir": "./docs",
+        "paths": "./lib"
+    }
+}
