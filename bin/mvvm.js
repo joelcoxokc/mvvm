@@ -203,38 +203,38 @@ program
  * Api Signup
  */
 
-program
-    .command('signup')
-    .description('Create your account'.white)
-    .action(function() {
-        var prompts = [{
-            type: 'input',
-            name: 'name',
-            message: 'What\'s your name?'
-        }, {
-            type: 'input',
-            name: 'email',
-            message: 'What\'s your email?'
-        }, {
-            type: 'password',
-            name: 'password',
-            message: 'Enter your password'
-        }];
-        //Ask
-        api.prompt(prompts, function (answers) {
-            api.signup(answers.name, answers.email, answers.password);
-        });
-    });
+// program
+//     .command('signup')
+//     .description('Create your account'.white)
+//     .action(function() {
+//         var prompts = [{
+//             type: 'input',
+//             name: 'name',
+//             message: 'What\'s your name?'
+//         }, {
+//             type: 'input',
+//             name: 'email',
+//             message: 'What\'s your email?'
+//         }, {
+//             type: 'password',
+//             name: 'password',
+//             message: 'Enter your password'
+//         }];
+//         //Ask
+//         api.prompt(prompts, function (answers) {
+//             api.signup(answers.name, answers.email, answers.password);
+//         });
+//     });
 
 /*
  * Api Status
  */
-program
-    .command('status')
-    .description('Show status of API'.white)
-    .action(function() {
-        api.status(program.json);
-    });
+// program
+//     .command('status')
+//     .description('Show status of API'.white)
+//     .action(function() {
+//         api.status(program.json);
+//     });
 
 /*
  * Api on help ption show examples
@@ -243,8 +243,8 @@ program
 program.on('--help', function() {
     console.log('  Examples:');
     console.log('');
-    console.log('    $ mvvm signup');
-    console.log('    $ mvvm status');
+    console.log('    $ mvvm init');
+    console.log('    $ mvvm local');
     console.log('');
 });
 
