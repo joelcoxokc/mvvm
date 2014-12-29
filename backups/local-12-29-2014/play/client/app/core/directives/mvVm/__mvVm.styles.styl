@@ -1,0 +1,154 @@
+$box-0-4-6  =  0px 4px 6px rgba(0,0,0,.3)
+$box-2-4-6  =  4px 6px 10px rgba(0,0,0,.19)
+
+animation(val)
+  -webkit-animation: val
+  -moz-animation: val
+  animation: val
+
+fill-mode(val)
+  -webkit-animation-fill-mode: val /* Chrome, Safari, Opera */
+  animation-fill-mode: val
+
+animation-direction(val)
+  -webkit-animation-direction: val; /* Chrome, Safari, Opera */
+  animation-direction: val;
+
+transform(val)
+  -webkit-transform:val
+  transform:val
+
+border-radius(val)
+  border-radius val
+  -webkit-border-radius val
+
+box-shadow(val)
+  box-shadow val
+  -webkit-box-shadow val
+  -moz-box-shadow val
+
+keyframes(name)
+  @-webkit-keyFrames {name}
+    block
+  @-moz-keyFrames {name}
+    block
+  @-keyFrames {name}
+    block
+
+
+mvvm-defaults()
+  background #2196F3
+
+mvvm-initial()
+  border 0px solid white
+  opacity 1
+  border-radius(0)
+
+
+.mv-vm
+  height 100vh
+  flex-container()
+  justify-content(center)
+  align-items(center)
+  flex-element(1 0 auto)
+
+  > .top
+    background #2196F3
+    align-self(center)
+    mvvm-initial()
+    animation(animate-open 0.2s ease-out)
+    fill-mode(forwards)
+
+  &.step-two
+    > .top
+      animation(animate-wide 0.2s ease-out)
+      // animation-direction(alternate)
+      fill-mode(forwards)
+  &.step-three
+    max-height 55px
+    > .top
+      animation(animate-bar-up 0.2s ease-out)
+      fill-mode(forwards)
+
++keyframes(animate-bar-up)
+  from
+    flex-element(0 0 100%)
+
+  to
+    flex-element(0 0 200px)
+
++keyframes(animate-open)
+  from
+    opacity 0.1
+    min-height 0px
+    flex-element(0 0 0px)
+    border-radius(100%)
+  20%
+    opacity 1
+
+  80%
+    flex-element(0 0 230px)
+    min-height 230px
+    animation-timing-function: ease-in-out;
+
+  to
+    border-radius(0)
+    flex-element(0 0 200px)
+    min-height 200px
+
+    // fill-mode(both)
+    // animation-direction(forward)
++keyframes(animate-wide)
+  from
+    flex-element(0 0 200px)
+    min-height 200px
+  to
+    flex-element(0 0 100%)
+    border none
+    min-height 200px
+    align-self(start)
+
+
+// +keyframes(mvvm)
+//   0%
+//     opacity .1
+//     flex-basis 0px
+//     min-height 0px
+//     border-radius(100%)
+//   30%
+//     min-height 200px
+//     border-radius(100%)
+//     animation( two .3s ease-out .4s)
+/*
+span
+  position absolute
+  display block
+  background lightgrey
+span.top,
+span.bottom
+  left 0
+  width 100%
+  // height 30pxa
+span.top
+  top 0
+  border-radius(0 0 50px 50px)
+span.bottom
+  bottom 0
+  border-radius(50px 50px 0 0)
+span.right,
+span.left
+  top 0
+  height 100%
+span.right
+  right 0
+  border-radius(50px 0 0 50px)
+span.left
+  left 0
+  height 100%
+  animation( spanner 0.3s east-out )
+  border-radius(0 50px 50px 0)
+  fill-mode(both)
+  animation-direction(normal)
+
+
+*/

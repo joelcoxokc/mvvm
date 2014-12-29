@@ -1,0 +1,20 @@
+<div class="col-md-6 col-md-offset-3">
+
+  <article class="panel panel-default">
+
+    <header class="panel-heading" data-ng-if="title">
+
+      {{title}}
+
+    </header>
+
+    <section data-ng-if="!hasBody" class="panel-body" data-ng-class="ngClasses" data-ng-transclude>
+
+    <!-- # Everything will be transcluded in this area
+         ============================================= -->
+
+    </section>
+
+  </article>
+
+</div>

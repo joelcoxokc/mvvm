@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App</title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app.css">
+    <!-- endinject -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="myCtrl as app">
+
+    <div class="Flex">
+        <!-- <h1>Welcome</h1> -->
+        <mv-vm class="reveal-animation"></mv-vm>
+    </div>
+
+    <ui-view></ui-view>
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/javascript-detect-element-resize/detect-element-resize.js"></script>
+    <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
+    <script src="bower_components/ng-Fx/dist/ngFx.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="app/app.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/modules/app.modules.js"></script>
+    <script src="app/core/config/routes.config.js"></script>
+    <script src="app/core/controllers/home.controller.js"></script>
+    <script src="app/core/services/storage.service.js"></script>
+    <script src="app/modules/messages/messages.module.js"></script>
+    <script src="app/core/directives/center-panel/center-panel.directive.js"></script>
+    <script src="app/core/directives/list-group/list-group.directive.js"></script>
+    <script src="app/core/directives/mvVm/mvVm.directive.js"></script>
+    <script src="app/core/directives/mvVm/mvVm.test.js"></script>
+    <script src="app/modules/messages/api/message.api.service.js"></script>
+    <script src="app/modules/messages/config/routes.config.js"></script>
+    <script src="app/modules/messages/controllers/messages.controller.js"></script>
+    <!-- endinject -->
+
+  </body>
+</html>

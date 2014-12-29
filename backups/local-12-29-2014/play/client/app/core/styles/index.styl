@@ -1,0 +1,33 @@
+@import 'mixins'
+@import 'base'
+@import '../directives/mvVm/mvVm.styles'
+@import '../directives/center-panel/center-panel.styles'
+@import '../directives/list-group/list-group.styles'
+
+
+.container
+  max-width 1200px
+  width 100%
+  height 500px
+  margin 50px auto
+  position relative
+
+.myBtn
+  position relative
+  margin-top 100px
+  border none
+  background lightblue
+  padding 10px 20px
+  outline none
+  &.active
+    color white
+    background blue
+
+.myBlock
+  position absolute
+  top 30%
+  left 30%
+  width 200px
+  height 200px
+  background red
+
