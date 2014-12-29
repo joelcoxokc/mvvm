@@ -5,6 +5,19 @@
 
 > Model View ViewModel Scaffolding tool # in development
 
+## Includes
+
+A bunch of predefined boilerplates for AngularJS Fullstack Applications.
+
+There a several from John Papa's (ng-demos)[https://github.com/johnpapa/ng-demos]
+
+John Papa has been the biggest help with the teams I have been working with at HackReactor. Thanks. 
+
+### BTW
+
+I have not had a chance to fill the readme with all of `mvvm`'s functionality. I will a revised README by January 1,2015 PM
+
+
 ## Getting Started
 Install the module with: 
 
@@ -15,106 +28,33 @@ $ npm install -g mvvm
 Example:
 
 ```javascript
-var Api = require('mvvm');
-//Create new instance of mvvm
-var api = new Api('access_token');
+
 ```
 
 ## Documentation
 
-#### .prompt(prompts, cb)
+#### mvvm init
 
-**Parameter**: `prompts`
-**Type**: `Array`
-**Example**: 
+This initializes your CWD (Current working directory with a mvvm.json file)
 
-```javascript
-var prompts = [
-{
-	type: 'input',
-	name: 'name',
-	message: 'What\'s your name?'
-}, 
-{
-	type: 'input',
-	name: 'email',
-	message: 'What\'s your email?'
-}];
+```bash
+mvvm init
 ```
 
-**Parameter**: `cb`
-**Type**: `Function`
-**Example**:
+#### mvvm local
 
-```javascript
-function(answers) {
-	
-}
-```
+This will prompt you to choose one of the templates. 
 
-The 'prompt' method is responsible for asking questions
+**Note** Some of the templates are form (John Papa's ng-demos)[https://github.com/johnpapa/ng-demos]
 
-How to use this method
+Here is a list of the current demos
 
-```javascript
-var prompts = [
-{
-	type: 'input',
-	name: 'name',
-	message: 'What\'s your name?'
-}, 
-{
-	type: 'input',
-	name: 'email',
-	message: 'What\'s your email?'
-}];
-
-api.prompt(prompts, function(answers) {
-	console.log(answers);
-}); 
-```
-
-#### .signup(name, email, password)
-
-**Parameter**: `name`
-**Type**: `String`
-**Example**: `myname`
-
-
-**Parameter**: `email`
-**Type**: `String`
-**Example**: `example@example.com`
-
-
-**Parameter**: `password`
-**Type**: `String`
-**Example**: `123456test`
-
-
-The 'signup' method is responsible for create accounts
-
-How to use this method
-
-```javascript
-
-api.signup('myname', 'email', '123456test');
-```
-
-#### .status(pureJson)
-
-**Parameter**: `pureJson`
-**Type**: `Boolean`
-**Example**: `true`
-
-
-The 'status' method is responsible for showing the status of api
-
-How to use this method
-
-```javascript
-
-api.status(true);
-```
+	(BASE)[https://github.com/joelcoxokc/mvvm/tree/master/local/BASE]
+	(CORE)[https://github.com/joelcoxokc/mvvm/tree/master/local/CORE]
+	(modular)[https://github.com/johnpapa/ng-demos/tree/master/modular]
+	(quickstart)[https://github.com/johnpapa/ng-demos/tree/master/quickstart]
+	(playground-ng-1.3)[https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground]
+	(cc-bmean)[https://github.com/johnpapa/ng-demos/tree/master/cc-bmean]
 
 
 ## Contributing
