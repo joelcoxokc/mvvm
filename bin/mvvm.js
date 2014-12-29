@@ -11,6 +11,7 @@
 /**
  * Module dependencies.
  */
+var homeDir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 
 var program = require('commander'),
     updateNotifier = require('update-notifier'),
@@ -32,9 +33,29 @@ var program = require('commander'),
     fs  = require('fs'),
     Storage = require('../lib/modules/storage.js'),
     config = new Storage('mvvm', 'mvvm.json'),
-    LocalStore = new Storage('store', path.join(__dirname,'../store.json')),
-    packages = require('../lib/utility/packages'),
-    store    = require('../lib/store');
+    LocalStore = new Storage('store', path.join(homeDir, '/.mvvm.json')),
+    packages = require('../lib/utility/packages');
+    // store    = require(path.join(homeDir, '/.mvvm.json')) || {};
+    var store = {};
+    var storeApi = require('../lib/store.js')
+
+    var file = _f.isEmpty(path.join(homeDir, '/.mvvm.json'))
+    var dir  = _f.isDir(path.join(homeDir, '/.mvvm-store'))
+    if(!dir){
+        mkdirp(path.join(homeDir, '/.mvvm-store'), function(){
+            console.log('Dir Made');
+        });
+    }
+    if(!file){
+        var newlocalDir = {"store": {"idCount": 12,"localDir":path.join(homeDir, '/.mvvm-store/') ,"projects": {}}}
+        store =_f.writeJSONSync(path.join(homeDir, '/.mvvm.json'), newlocalDir);
+        store = require(path.join(homeDir, '/.mvvm.json'));
+        console.log("store===",store);
+        LocalStore = new Storage('store', path.join(homeDir, '/.mvvm.json'));
+        console.log("localStore===",LocalStore);
+    }
+
+
 
 require('colors');
 
@@ -169,7 +190,7 @@ program
 program
     .command('local')
     .action(function(){
-        var localDir =path.join(__dirname, '../local');
+        var localDir =path.join(homeDir, '/.mvvm-store/');
 
         var prompts = [{
             type:"list",
@@ -195,7 +216,7 @@ program
 program
     .command('save')
     .action(function(){
-        store.save()
+        storeApi.save()
     })
 
 
