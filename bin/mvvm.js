@@ -35,12 +35,12 @@ var program = require('commander'),
     config = new Storage('mvvm', 'mvvm.json'),
     LocalStore = new Storage('store', path.join(homeDir, '/.mvvm.json')),
     packages = require('../lib/utility/packages');
-    // store    = require(path.join(homeDir, '/.mvvm.json')) || {};
     var store = {};
     var storeApi = require('../lib/store.js')
-
     var file = _f.isEmpty(path.join(homeDir, '/.mvvm.json'))
     var dir  = _f.isDir(path.join(homeDir, '/.mvvm-store'))
+    var demoDir = path.join(__dirname, '../demos')
+    var localDir = path.join(homeDir, '/.mvvm-store');
     if(!dir){
         mkdirp(path.join(homeDir, '/.mvvm-store'), function(){
             console.log('Dir Made');
@@ -59,10 +59,9 @@ var program = require('commander'),
 
 require('colors');
 
-/*
- * Api Insight
- */
-
+//////
+//////     @Api insight
+//////
 var insight = new Insight({
     trackingCode: 'google-traking-code',
     packageName: pkg.name,
@@ -70,32 +69,27 @@ var insight = new Insight({
 });
 
 
-/**
- * Notify on start
- */
+//////
+//////     @Api notify on start
+//////
 program.emit('start')
 
-/*
- * Api Bootstrap
- */
-
+//////
+//////     @Api Bootstrap
+//////
 program
     .version(pkg.version, '-v, --version')
     .usage('command [option]'.white);
 
-/*
- * Options
- */
-
+//////
+//////     @Options
+//////
 program
-    .option('--json', 'Show pure JSON output');
+    .option('--json', 'Show pure JSON output')
 
-
-
-/*
- * Api Init
- */
-
+//////
+//////     @Command   local [name]
+//////     @description initialize the current working directory with mvvm, Creates a mvvm.json in your directory
 program
     .command('init')
     .description('initialize your project'.white)
@@ -158,39 +152,18 @@ program
                 done(true)
             }
         }
-
     });
 
-
-
+//////
+//////     @Command   local [name]
+//////     @description install a copy of a previously saved package or stack.
 program
-    .command('core')
+    .command('local [value]')
     .action(function(){
 
-        var prompts = [
-            {
-                type:'list',
-                name:'application',
-                message:'Codebase starting point?',
-                choices:[{
-                    name:'bank',
-                    value:'blank',
-                },{
-                    name:'skeleton',
-                    value:'skeleton',
-                    default:true
-                }]
-            }
-        ]
-        api.prompt(prompts, function(answers){
-            api.core(answers)
-        })
-    })
-
-program
-    .command('local')
-    .action(function(){
-        var localDir =path.join(homeDir, '/.mvvm-store/');
+        if(this.args[0]){
+            return api.stack(this.args[0]);
+        }
 
         var prompts = [{
             type:"list",
@@ -198,77 +171,59 @@ program
             message: "Stack?",
             choices:[]
         }]
+
         var folders = fs.readdirSync(localDir)
         _.forEach(folders, function (folder){
-            console.log(folder);
             prompts[0].choices.push({name:folder, value:folder})
         })
+
         api.prompt(prompts, function (answers){
             api.stack(answers.stack)
         })
+    });
 
-    })
+//////
+//////     @Command   demo [name]
+//////     @description install a copy of a previously saved package or stack.
+program
+    .command('demo [value]')
+    .action(function(){
 
-/*
- * Store Save
- */
+        if(this.args[0]){
+            return api.demo(this.args[0]);
+        }
 
+        var prompts = [{
+            type:"list",
+            name:"demo",
+            message: "Demo application?",
+            choices:[]
+        }]
+
+        var folders = fs.readdirSync(demoDir)
+        _.forEach(folders, function (folder){
+
+            prompts[0].choices.push({name:folder, value:folder})
+        })
+
+        api.prompt(prompts, function (answers){
+            api.demo(answers.demo)
+        })
+    });
+
+//////
+//////     @Command   save
+//////     @description Save the current working directory in ~/.mvvm-store/{package-name}
 program
     .command('save')
     .action(function(){
+
         storeApi.save()
     })
 
-
-/*
- * Api Signup
- */
-
-// program
-//     .command('signup')
-//     .description('Create your account'.white)
-//     .action(function() {
-//         var prompts = [{
-//             type: 'input',
-//             name: 'name',
-//             message: 'What\'s your name?'
-//         }, {
-//             type: 'input',
-//             name: 'email',
-//             message: 'What\'s your email?'
-//         }, {
-//             type: 'password',
-//             name: 'password',
-//             message: 'Enter your password'
-//         }];
-//         //Ask
-//         api.prompt(prompts, function (answers) {
-//             api.signup(answers.name, answers.email, answers.password);
-//         });
-//     });
-
-/*
- * Api Status
- */
-// program
-//     .command('status')
-//     .description('Show status of API'.white)
-//     .action(function() {
-//         api.status(program.json);
-//     });
-
-/*
- * Api on help ption show examples
- */
-
-program.on('--help', function() {
-    console.log('  Examples:');
-    console.log('');
-    console.log('    $ mvvm init');
-    console.log('    $ mvvm local');
-    console.log('');
-});
-
+//////
+//////     @Command   clear
+//////     @description remove all files except mvvm.json
 program
     .command('clear')
     .action(function(){
@@ -287,14 +242,46 @@ program
             }
         })
     })
+
+//////
+//////     @Command   clean
+//////     @description Completely remove everything from the current directory
 program
     .command('clean')
-    .action(del.bind(null, ['./server', './client', './*', './.*']))
+    .action(function(){
 
-/*
- * Api Banner
- */
+        inquirer.prompt([{
+            type:'confirm',
+            name:'confirm',
+            message: 'Are You Sure?'.bold.red+' Delete EVERYTHING'.blue+'?????'.bold.red,
+            default:false
+        }], function (answers){
+            if(answers.confirm){
 
+                del(['./server', './client', './*', './.*'])
+
+            } else {
+                console.log('Exiting');
+                console.log('*** Nothing was removed ***'.red);
+                process.exit()
+            }
+        })
+    })
+
+//////
+//////     @Command   --help
+//////     @description to see a list of possible options
+program.on('--help', function() {
+    console.log('  Examples:');
+    console.log('');
+    console.log('    $ mvvm init');
+    console.log('    $ mvvm local');
+    console.log('');
+});
+
+//////
+//////      Api Banner
+//////
 if (process.argv.length === 3 && process.argv[2] === '--help') {
     banner();
 }
@@ -308,19 +295,14 @@ if (process.argv.length === 4 && process.argv[3] !== '--json') {
     }
 }
 
-
-
-
-/*
- * Api Process Parser
- */
-
+//////
+//////      @Process Parser
+//////
 program.parse(process.argv);
 
-/*
- * Api Default Action
- */
-
+//////
+//////      @Default Action
+//////
 var notifier = updateNotifier({
     packageName: pkg.name,
     packageVersion: pkg.version
