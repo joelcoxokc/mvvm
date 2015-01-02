@@ -9,6 +9,12 @@
     "id": 10,
     "created": 1419860391673,
     "local_path": "/Users/joelcox/dev/projects/mvvm/local/ng-demos-cc-bmean",
-    "updated": 1419860391673
+    "updated": 1419860391673,
+    "serverDir": "./src/server",
+    "clientDir": "./src/client",
+    "appDir": "./src/client/app/",
+    "coreDir": "./src/client/app/core",
+    "modulesDir": "./src/client/app/modules",
+    "cwd": "/Users/joelcox/dev/projects/mvvm/demos/ng-demo-cc-bmean"
   }
 }

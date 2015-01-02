@@ -9,6 +9,12 @@
     "id": 12,
     "created": 1419867117130,
     "local_path": "/Users/joelcox/dev/projects/mvvm/local/ng-demo-quickstart",
-    "updated": 1419867117130
+    "updated": 1419867117130,
+    "serverDir": "./src/server",
+    "clientDir": "./src/client",
+    "appDir": "./src/client/app/",
+    "coreDir": "./src/client/app/core",
+    "modulesDir": "./src/client/app/modules",
+    "cwd": "/Users/joelcox/dev/projects/mvvm/demos/ng-demo-quickstart"
   }
 }

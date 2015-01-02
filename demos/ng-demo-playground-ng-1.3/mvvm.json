@@ -9,6 +9,12 @@
     "id": 11,
     "created": 1419864480723,
     "local_path": "/Users/joelcox/dev/projects/mvvm/local/playground-ng-1.3",
-    "updated": 1419864480723
+    "updated": 1419864480723,
+    "serverDir": "./src/server",
+    "clientDir": "./src/client",
+    "appDir": "./src/client/app/",
+    "coreDir": "./src/client/app/core",
+    "modulesDir": "./src/client/app/modules",
+    "cwd": "/Users/joelcox/dev/projects/mvvm/demos/ng-demo-playground-ng-1.3"
   }
 }

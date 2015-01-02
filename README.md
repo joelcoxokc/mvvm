@@ -80,16 +80,22 @@ Now that we have initialize our directory. you can run the `mvvm demo` command.
 ### mvvm demo
 
 Provides a list of demo applications. 
-Several of which come from John Papa's (ng-demos)[https://github.com/johnpapa/ng-demos].
+Several of which come from John Papa's [ng-demos](https://github.com/johnpapa/ng-demos).
 
 Here is a list of the current demos
 
-**[BASE](https://github.com/joelcoxokc/mvvm/demos/BASE)**
-**[CORE](https://github.com/joelcoxokc/mvvm/demos/CORE)**
-**[modular](https://github.com/johnpapa/ng-demos/tree/master/quickstart/modular)**
-**[quickstart](https://github.com/johnpapa/ng-demos/tree/master/quickstart)**
-**[playground-ng-1.3](https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground)**
-**[cc-bmean](https://github.com/johnpapa/ng-demos/tree/master/cc-bmean)**
+ - **[BASE](https://github.com/joelcoxokc/mvvm/demos/BASE)**
+
+ - **[CORE](https://github.com/joelcoxokc/mvvm/demos/CORE)**
+
+ - **[modular](https://github.com/johnpapa/ng-demos/tree/master/quickstart/modular)**
+
+ - **[quickstart](https://github.com/johnpapa/ng-demos/tree/master/quickstart)**
+
+ - **[playground-ng-1.3](https://github.com/johnpapa/ng-demos/tree/master/
+ ng-1.3%20playground)**
+
+ - **[cc-bmean](https://github.com/johnpapa/ng-demos/tree/master/cc-bmean)**
 
 ##DEMOS
 

@@ -9,6 +9,12 @@
     "id": 9,
     "created": 1419860030626,
     "local_path": "/Users/joelcox/dev/projects/mvvm/local/ng-demo-modular",
-    "updated": 1419860030626
+    "updated": 1419860030626,
+    "serverDir": "./src/server",
+    "clientDir": "./src/client",
+    "appDir": "./src/client/app",
+    "coreDir": "./src/client/app/core",
+    "modulesDir": "./src/client/app/modules",
+    "cwd": "/Users/joelcox/dev/projects/mvvm/demos/ng-demo-modular"
   }
 }

@@ -6,10 +6,16 @@
     "author": "joelcoxokc",
     "username": "joelcoxokc",
     "email": "joelcox@hisimagination.com",
-    "name": "player",
+    "name": "CORE",
     "id": 8,
     "created": 1419856360866,
     "local_path": "/Users/joelcox/dev/projects/mvvm/local/player",
-    "updated": 1419856360866
+    "updated": 1419856360866,
+    "serverDir": "./server",
+    "clientDir": "./client",
+    "appDir": "./client/app",
+    "coreDir": "./client/app/core",
+    "modulesDir": "./client/app/modules",
+    "cwd": "/Users/joelcox/dev/projects/mvvm/demos/CORE"
   }
 }

@@ -10,6 +10,12 @@
     "id": 6,
     "created": 1419198302446,
     "local_path": "/Users/joelcox/dev/projects/mvvm/local/BASE",
-    "updated": 1419198302446
+    "updated": 1419198302446,
+    "serverDir": "./server",
+    "clientDir": "./client",
+    "appDir": "./client/app",
+    "coreDir": "./client/app/core",
+    "modulesDir": "./client/app/modules",
+    "cwd": "/Users/joelcox/dev/projects/mvvm/demos/BASE"
   }
 }
