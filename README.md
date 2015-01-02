@@ -1,6 +1,8 @@
 
 # mvvm UNDER Development
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/joelcoxokc/mvvm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##HackReactor Students Checkout the mvvm new command
 
 The documentation was thrown together with little time. 
