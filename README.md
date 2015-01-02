@@ -1,4 +1,10 @@
+
 # mvvm UNDER Development
+
+##HackReactor Students Checkout the mvvm new command
+
+The documentation was thrown together with little time. 
+I will be updating, and fixing spelling errors soon. 
 
 
 [![Build Status](https://secure.travis-ci.org/joelcoxokc/mvvm.png?branch=master)](https://travis-ci.org/joelcoxokc/mvvm) [![NPM version](https://badge-me.herokuapp.com/api/npm/mvvm.png)](http://badges.enytc.com/for/npm/mvvm)
@@ -56,6 +62,87 @@ $ npm install -g mvvm
 
 ## Documentation
 
+###Generator
+
+### mvvm new
+
+Run the following command to get started with a fresh simple application template. 
+
+**HACK REACTOR** This is the quick fullstack example we went over in my long three hour talk. 
+
+```bash
+$ mvvm new
+```
+
+mvvm will build a sample module ready application. In your current working directory. 
+
+**Make you run npm install && bower install**
+
+you can run the application by simply running the following command
+
+```bash
+$ gulp
+```
+
+gulp has a few tasks. 
+ - styles
+ - bower
+ - inject
+ - server
+ - watch
+
+gulp will simply compile your styles,
+Then it till find and inject all your bower components into your index.html
+Then it will find and inject all you css, and js into your index.html
+Then it will simply require the ./server, to run the express server.
+Finally it will watch you css & js or changes, and livereload. 
+
+**NOW TIME TO BUILD**
+
+
+Usually you would run the following command
+
+```bash
+$ mvvm init
+```
+
+mvvm init will ask you a few questions about your file structure. However, if you open the mvvm.json file on your root directory, you will see that these paths are already set for you. 
+
+I Do not reccomend changing them. These paths are optimized for consistent Architectural patterns. 
+
+Since we dont have to run `mvvm init`, let try the following command
+
+```bash
+$ mvvm --help
+```
+
+You will see a large coloreful list of commands with options. 
+
+Lets take a look a mvvm make
+
+###`mvvm make [compnent] [name]`
+
+mvvm make is a series of generators that will generate template code for you. 
+
+Each of these commands will install code into either your 
+`./client/app/core directory `
+or
+`./client/app/modules/** directory` 
+
+mvvm will read the moduleDir set in you `./mvvm.json`
+and display each module as an option. 
+
+Once an option is chosen, it will then generate the code within that module. 
+
+To create a new blank module, you can run the following command.
+
+```bash
+$ mvvm make module [name]
+```
+
+You can specify a name... or else it will prompt you for the name!
+
+Once you have a new module, You are ready to start generating components within this module. 
 
 
 ### mvvm demo
@@ -65,8 +152,6 @@ Several of which come from John Papa's [ng-demos](https://github.com/johnpapa/ng
 
 Here is a list of the current demos
 
- - **[BASE](https://github.com/joelcoxokc/mvvm/demos/BASE)**
- - **[CORE](https://github.com/joelcoxokc/mvvm/demos/CORE)**
  - **[modular](https://github.com/johnpapa/ng-demos/tree/master/quickstart/modular)**
  - **[quickstart](https://github.com/johnpapa/ng-demos/tree/master/quickstart)**
  - **[playground-ng-1.3](https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground)**
@@ -100,7 +185,7 @@ Now that we have initialize our directory. you can run the `mvvm demo` command.
 
 ##DEMOS
 
-####BASE
+####BASE <NOT WORKING>
 
 Provides you with a completely empty apllication folder structure. However, 
 There NodeJS server is filled out with something quite interesting. 
@@ -110,8 +195,6 @@ I have found that it is difficult for new developers to understand how everythin
 The app object is finally console.logged at the end of the file. Now you can simply preview what all has been added to the object. 
 
 The client side is only a bunch of empty, well architected folders. 
-
-####CORE
 
 Provides a simple example of using each components in angular.
 See READEME.md for more info. 
