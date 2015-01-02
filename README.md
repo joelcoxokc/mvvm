@@ -13,10 +13,37 @@ There a several from John Papa's (ng-demos)[https://github.com/johnpapa/ng-demos
 
 John Papa has been the biggest help with the teams I have been working with at HackReactor. Thanks. 
 
-### BTW
 
-I have not had a chance to fill the readme with all of `mvvm`'s functionality. I will a revised README by January 1,2015 PM
+## What is mvvm?
 
+mvvm is an all purpose command line tool that does several things. 
+It is primarily build for Angular applications. However, it can be used with anything. 
+
+Initially I had build an angular fullstack generator called **slush-y**
+
+**mvvm** now does everything and more that **slush-y**.
+
+##What does mvvm do?
+
+**mvvm** contains a local store, which allows you to save you current working directory. This of course allows you to re install it somewhere else. 
+
+**Why not use git?** Well git is great... but I need something to generate template code quick, and creating a new repo, or pulling peices from a repo was too tediouse. 
+
+**mvvm** is also a command line generator. It uses Gulp, just like slush does, however, you get to create and save the templates. 
+
+There is currently not a great deal of flexibility when saving templates. I will be providing updates soon. 
+
+Here are some of the featured within mvvm
+
+
+##Features
+
+    - AngularJS Component Generator
+    - Demo AngularJS Application Generator
+    - Local Package Storage
+
+
+Lets get started, and I'll go a little more in depth on these feature below. 
 
 ## Getting Started
 Install the module with: 
@@ -25,37 +52,59 @@ Install the module with:
 $ npm install -g mvvm
 ```
 
-Example:
 
-```javascript
-
-```
 
 ## Documentation
 
-#### mvvm init
+### mvvm init
 
 This initializes your CWD (Current working directory with a mvvm.json file)
+
+`mvvm.json` is an important file, and must be in your directory to run most of the commands. 
+
+The **init** command will prompt you for several directory paths. 
+
+    -clientDir : your client side directory
+    -serverDir : your server side directory
+    -appDir    : The application directory within your client
+    -modulesDir: The directory where you store your separate  AngularJS Modules
+    -coreDir   : The directory where you store you core AngularJS Module
+
 
 ```bash
 mvvm init
 ```
 
-#### mvvm local
+Now that we have initialize our directory. you can run the `mvvm demo` command. 
 
-This will prompt you to choose one of the templates. 
+### mvvm demo
 
-**Note** Some of the templates are form (John Papa's ng-demos)[https://github.com/johnpapa/ng-demos]
+Provides a list of demo applications. 
+Several of which come from John Papa's (ng-demos)[https://github.com/johnpapa/ng-demos].
 
 Here is a list of the current demos
 
-	(BASE)[https://github.com/joelcoxokc/mvvm/tree/master/local/BASE]
-	(CORE)[https://github.com/joelcoxokc/mvvm/tree/master/local/CORE]
-	(modular)[https://github.com/johnpapa/ng-demos/tree/master/modular]
-	(quickstart)[https://github.com/johnpapa/ng-demos/tree/master/quickstart]
-	(playground-ng-1.3)[https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground]
-	(cc-bmean)[https://github.com/johnpapa/ng-demos/tree/master/cc-bmean]
+**(BASE)[https://github.com/joelcoxokc/mvvm/tree/master/local/BASE]**
+**(CORE)[https://github.com/joelcoxokc/mvvm/tree/master/local/CORE]**
+**(modular)[https://github.com/johnpapa/ng-demos/tree/master/modular]**
+**(quickstart)[https://github.com/johnpapa/ng-demos/tree/master/quickstart]**
+**(playground-ng-1.3)[https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground]**
+**(cc-bmean)[https://github.com/johnpapa/ng-demos/tree/master/cc-bmean]**
 
+##DEMOS
+
+####BASE
+
+Provides you with a completely empty apllication folder structure. However, 
+There NodeJS server is filled out with something quite interesting. 
+
+I have found that it is difficult for new developers to understand how everything in **NodeJS** is connected. So the server is simply an object called **app** that is past around to the furthest depths of the server. Each file adds itself, and it's sibling files to this object. By the time the computer reads the server/index.js the entire node application has added some information to the app object. 
+
+The app object is finally console.logged at the end of the file. Now you can simply preview what all has been added to the object. 
+
+The client side is only a bunch of empty, well architected folders. 
+
+####CORE
 
 ## Contributing
 
