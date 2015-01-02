@@ -74,11 +74,12 @@ Run the following command to get started with a fresh simple application templat
 $ mvvm new
 ```
 
-mvvm will build a sample module ready application. In your current working directory. 
+mvvm will build a sample module ready application in your current working directory. 
 
-**Make you run npm install && bower install**
+**Make sure you run npm install && bower install**
 
-you can run the application by simply running the following command
+After npm and bower install, You can run the application by simply running the following command.
+
 
 ```bash
 $ gulp
@@ -92,10 +93,10 @@ gulp has a few tasks.
  - watch
 
 gulp will simply compile your styles,
-Then it till find and inject all your bower components into your index.html
-Then it will find and inject all you css, and js into your index.html
+Then it will find and inject all bower_components into your index.html
+Then it will find and inject all css, and js into your index.html
 Then it will simply require the ./server, to run the express server.
-Finally it will watch you css & js or changes, and livereload. 
+Finally it will watch you css & js for changes, and livereload. 
 
 **NOW TIME TO BUILD**
 
@@ -106,30 +107,30 @@ Usually you would run the following command
 $ mvvm init
 ```
 
-mvvm init will ask you a few questions about your file structure. However, if you open the mvvm.json file on your root directory, you will see that these paths are already set for you. 
+mvvm init will ask you a few questions about your file structure. However, if you open the mvvm.json file in your root directory, you will see that these paths are already set for you. 
 
 I Do not reccomend changing them. These paths are optimized for consistent Architectural patterns. 
 
-Since we dont have to run `mvvm init`, let try the following command
+Since we dont have to run `mvvm init`, lets try the following command
 
 ```bash
 $ mvvm --help
 ```
 
-You will see a large coloreful list of commands with options. 
+You will see a large coloreful list of commands with options.
 
-Lets take a look a mvvm make
+Lets take a look at mvvm make
 
 ###`mvvm make [compnent] [name]`
 
-mvvm make is a series of generators that will generate template code for you. 
+`mvvm make` is a series of generators that will generate template code for you. 
 
 Each of these commands will install code into either your 
 `./client/app/core directory `
 or
 `./client/app/modules/** directory` 
 
-mvvm will read the moduleDir set in you `./mvvm.json`
+mvvm will read the modulesDir set in you `./mvvm.json`
 and display each module as an option. 
 
 Once an option is chosen, it will then generate the code within that module. 
@@ -143,6 +144,8 @@ $ mvvm make module [name]
 You can specify a name... or else it will prompt you for the name!
 
 Once you have a new module, You are ready to start generating components within this module. 
+
+**Check out the `--help` for available generators.**
 
 
 ### mvvm demo
