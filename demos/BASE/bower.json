@@ -2,14 +2,11 @@
   "name": "skeleton",
   "version": "0.1.0",
   "description": "",
-  "authors": [
-    "joelcoxokc  joelcox@hisimagination.com ",
-  ],
+  "authors": [],
   "moduleType": [
-    "node",
+    "node"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/joelcoxokc/skeleton",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -421,9 +421,9 @@ if (process.argv.length === 4 && process.argv[3] !== '--json') {
     }
 }
 
-program.on('init', function(){
-    banner();
-})
+// program.on('init', function(){
+//     banner();
+// })
 
 //////
 //////      @Process Parser
