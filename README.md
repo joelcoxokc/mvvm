@@ -84,12 +84,12 @@ Several of which come from John Papa's (ng-demos)[https://github.com/johnpapa/ng
 
 Here is a list of the current demos
 
-**(BASE)[https://github.com/joelcoxokc/mvvm/tree/master/local/BASE]**
-**(CORE)[https://github.com/joelcoxokc/mvvm/tree/master/local/CORE]**
-**(modular)[https://github.com/johnpapa/ng-demos/tree/master/modular]**
-**(quickstart)[https://github.com/johnpapa/ng-demos/tree/master/quickstart]**
-**(playground-ng-1.3)[https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground]**
-**(cc-bmean)[https://github.com/johnpapa/ng-demos/tree/master/cc-bmean]**
+**[BASE](https://github.com/joelcoxokc/mvvm/demos/BASE)**
+**[CORE](https://github.com/joelcoxokc/mvvm/demos/CORE)**
+**[modular](https://github.com/johnpapa/ng-demos/tree/master/quickstart/modular)**
+**[quickstart](https://github.com/johnpapa/ng-demos/tree/master/quickstart)**
+**[playground-ng-1.3](https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground)**
+**[cc-bmean](https://github.com/johnpapa/ng-demos/tree/master/cc-bmean)**
 
 ##DEMOS
 
