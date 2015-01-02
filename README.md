@@ -9,7 +9,7 @@
 
 A bunch of predefined boilerplates for AngularJS Fullstack Applications.
 
-There a several from John Papa's (ng-demos)[https://github.com/johnpapa/ng-demos]
+There a several from [John Papa's ng-demos](https://github.com/johnpapa/ng-demos)
 
 John Papa has been the biggest help with the teams I have been working with at HackReactor. Thanks. 
 
@@ -56,7 +56,27 @@ $ npm install -g mvvm
 
 ## Documentation
 
+
+
+### mvvm demo
+
+Provides a list of demo applications. 
+Several of which come from John Papa's [ng-demos](https://github.com/johnpapa/ng-demos).
+
+Here is a list of the current demos
+
+ - **[BASE](https://github.com/joelcoxokc/mvvm/demos/BASE)**
+ - **[CORE](https://github.com/joelcoxokc/mvvm/demos/CORE)**
+ - **[modular](https://github.com/johnpapa/ng-demos/tree/master/quickstart/modular)**
+ - **[quickstart](https://github.com/johnpapa/ng-demos/tree/master/quickstart)**
+ - **[playground-ng-1.3](https://github.com/johnpapa/ng-demos/tree/master/ng-1.3%20playground)**
+ - **[cc-bmean](https://github.com/johnpapa/ng-demos/tree/master/cc-bmean)**
+
+
+
+
 ### mvvm init
+
 
 This initializes your CWD (Current working directory with a mvvm.json file)
 
@@ -77,25 +97,6 @@ mvvm init
 
 Now that we have initialize our directory. you can run the `mvvm demo` command. 
 
-### mvvm demo
-
-Provides a list of demo applications. 
-Several of which come from John Papa's [ng-demos](https://github.com/johnpapa/ng-demos).
-
-Here is a list of the current demos
-
- - **[BASE](https://github.com/joelcoxokc/mvvm/demos/BASE)**
-
- - **[CORE](https://github.com/joelcoxokc/mvvm/demos/CORE)**
-
- - **[modular](https://github.com/johnpapa/ng-demos/tree/master/quickstart/modular)**
-
- - **[quickstart](https://github.com/johnpapa/ng-demos/tree/master/quickstart)**
-
- - **[playground-ng-1.3](https://github.com/johnpapa/ng-demos/tree/master/
- ng-1.3%20playground)**
-
- - **[cc-bmean](https://github.com/johnpapa/ng-demos/tree/master/cc-bmean)**
 
 ##DEMOS
 
@@ -111,6 +112,12 @@ The app object is finally console.logged at the end of the file. Now you can sim
 The client side is only a bunch of empty, well architected folders. 
 
 ####CORE
+
+Provides a simple example of using each components in angular.
+See READEME.md for more info. 
+
+You can find the docs on the other demos in their README's.
+
 
 ## Contributing
 

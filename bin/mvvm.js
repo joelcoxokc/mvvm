@@ -175,6 +175,17 @@ program
     });
 
 //////
+//////     @Command   new
+//////     @description install a copy of a previously saved package or stack.
+program
+    .command('new [name]')
+    .action(function(){
+        console.log('test');
+        generator.core()
+
+    });
+
+//////
 //////     @Command   local [name]
 //////     @description install a copy of a previously saved package or stack.
 program

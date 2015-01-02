@@ -1,6 +1,6 @@
 {
   "mvvm": {
-    "project": "skeleton",
+    "project": "CORE",
     "description": "",
     "version": "0.0.0",
     "author": "joelcoxokc",
@@ -9,7 +9,7 @@
     "name": "CORE",
     "id": 8,
     "created": 1419856360866,
-    "local_path": "/Users/joelcox/dev/projects/mvvm/local/player",
+    "local_path": "/Users/joelcox/dev/projects/mvvm/demos/CORE",
     "updated": 1419856360866,
     "serverDir": "./server",
     "clientDir": "./client",
