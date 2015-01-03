@@ -175,14 +175,76 @@ program
     });
 
 //////
+//////     @Command   application
+//////     @description Create a new application in your current directory.
+program
+    .option('-B, --beginner')
+    .option('-A, --advanced')
+    .option('-X, --expert')
+    .command('application [value]')
+    .action(function(){
+
+        var prompts = [{
+            type:'list',
+            name:'appLevel',
+            message:'Experience Level?',
+            choices:[
+                {name:'beginner', value:'beginner', default:true},
+                {name:'advanced', value:'advanced'},
+                {name:'expert', value:'expert'}
+            ]
+        },{
+            type: 'input',
+            name: 'name',
+            message: 'Project name?',
+            default: program.args[0] || defaults.projectName,
+        },{
+            type: 'input',
+            name: 'version',
+            message: 'Version?',
+            default:'0.1.0'
+        },{
+            type: 'input',
+            name: 'author',
+            message: 'Author?',
+            default: defaults.username
+        },{
+            type: 'input',
+            name: 'username',
+            message: 'Github username',
+            default: defaults.username
+        },{
+            type: 'input',
+            name: 'email',
+            message: 'Github Email?',
+            default: defaults.email
+        }]
+
+        //Ask
+        ask(prompts);
+
+        function ask(questions) {
+            api.prompt(questions, function(answers) {
+                answers.serverDir  = './src/server';
+                answers.clientDir  = './src/client';
+                answers.appDir     = './src/client/app';
+                answers.coreDir    = './src/client/app/core';
+                answers.modulesDir = './src/client/app/modules';
+                answers.cwd = process.cwd();
+                config.batch(answers);
+                config.save();
+                generator.application(answers);
+            });
+        }
+    });
+
+//////
 //////     @Command   new
 //////     @description install a copy of a previously saved package or stack.
 program
     .command('new [name]')
     .action(function(){
-        console.log('test');
-        generator.core()
-
+        generator.core();
     });
 
 //////
