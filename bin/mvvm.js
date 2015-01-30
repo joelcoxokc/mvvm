@@ -56,6 +56,7 @@ var program = require('commander'),
     }
 
     var generator = require('../lib/generator')
+    var angularjs = require('../lib/angular')
 
 require('colors');
 
@@ -411,6 +412,25 @@ program
             });
 
     });
+
+program
+    .option('--styl', 'Choose stylus over css')
+    .option('--sass', 'Choose sass over css')
+    .option('--less', 'Choose less over css')
+    .option('-p, --providers <items>', 'List of providers', list)
+    .option('-f, --functions <items>', 'List of functions', list)
+    .option('-m, --module [value]', 'The chosen module')
+    .option('-l, --lib [value]', 'The chosen lib')
+    .command('directive [name]')
+    .action(function(){
+        angularjs.directive();
+    })
+
+program
+    .command('module [name]')
+    .action(function(){
+        angularjs.module();
+    })
 
 //////
 //////     @Command   --help
